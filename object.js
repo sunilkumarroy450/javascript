@@ -44,43 +44,101 @@ circle.draw();
 //Factory Function
 
 function createCircle(radius) {
-    return {
-      radius: radius, // we can write only radius here because in es6 if we have same key and same value name we used to write only key
-      //radius,(both are fine)
-      draw: function () {
-        // method
-        console.log("draw");
-      },
-    };
-  }
-  
-  const circle1 = createCircle(3);
-  // console.log(circle1)
-  circle1.draw();
-  // console.log(circle1)
-  
-  //#Constructor
-  
-  // constructor function
-  // Nameing convenction we usd for constructor function is Upper Case of first letter
-  
-  function Circle(radius) {
-    // 'this' is the refrence to the object which is execute the code and after 'this' '.' is used to set the property to objects
-    //console.log(this) //// It will refer to golobal object
-    this.radius = radius;
-    this.draw = function () {
+  return {
+    radius: radius, // we can write only radius here because in es6 if we have same key and same value name we used to write only key
+    //radius,(both are fine)
+    draw: function () {
+      // method
       console.log("draw");
-    };
-  }
-  // generally 'this' is a golbal object which is refreing to a window object
-  //
-  // So to aviod creating global object and specificly focus on the object we refreing to , so we used 'new'
-  const another = new Circle(2);
-  // When we use 'new' operator to call a function three things happen, that are:-
-  // It creates an empty objects
-  // It will set 'this' to point to that object
-  // It will also return our function, We do not have an explicite 'return' statement, it will 'return' automatically
-  
+    },
+  };
+}
+
+const circle1 = createCircle(3);
+// console.log(circle1)
+circle1.draw();
+// console.log(circle1)
+
+//#Constructor
+
+// constructor function
+// Nameing convenction we usd for constructor function is Upper Case of first letter
+
+function Circle(radius) {
+  // 'this' is the refrence to the object which is execute the code and after 'this' '.' is used to set the property to objects
+  //console.log(this) //// It will refer to golobal object
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
+}
+// generally 'this' is a golbal object which is refreing to a window object
+//
+// So to aviod creating global object and specificly focus on the object we refreing to , so we used 'new'
+const another = new Circle(2);
+// When we use 'new' operator to call a function three things happen, that are:-
+// It creates an empty objects
+// It will set 'this' to point to that object
+// It will also return our function, We do not have an explicite 'return' statement, it will 'return' automatically
+
+//#Call and Apply
+
+function Circle1(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
+}
+
+//below all are same
+Circle1.call({}, 7); //both are same
+const ans = new Circle1(7); //both are same(here 'this' creates empty obj)
+Circle1.apply({}, [1, 2, 3]); //this is simlar to both but it only takes arguments as an array
+
+//# Example for Bind
+var pokemon = {
+  firstname: "Pika",
+  lastname: "Chu ",
+  getPokeName: function () {
+    var fullname = this.firstname + " " + this.lastname;
+    return fullname;
+  },
+};
+
+var pokemonName = function () {
+  console.log(this.getPokeName() + "I choose you!");
+};
+
+var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemon now
+
+logPokemon(); // 'Pika Chu I choose you!'
 
 
 
+
+
+//Notes:-
+//When we use the bind() method:
+//1.the JS engine is creating a new pokemonName instance and binding pokemon as its this variable. It is important to understand that it copies the pokemonName function.
+//2.After creating a copy of the pokemonName function it is able to call logPokemon(), although it wasn’t on the pokemon object initially. It will now recognizes its properties (Pika and Chu) and its methods.
+
+// Or for Better clarity
+
+
+var pokemon = {
+    firstname: 'Pika',
+    lastname: 'Chu ',
+    getPokeName: function() {
+        var fullname = this.firstname + ' ' + this.lastname;
+        return fullname;
+    }
+};
+
+var pokemonName = function(snack, hobby) {
+    console.log(this.getPokeName() + 'I choose you!');
+    console.log(this.getPokeName() + ' loves ' + snack + ' and ' + hobby);
+};
+
+var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemon now
+
+logPokemon('sushi', 'algorithms'); // Pika Chu  loves sushi and algorithms
