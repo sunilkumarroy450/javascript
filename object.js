@@ -142,3 +142,33 @@ var pokemonName = function(snack, hobby) {
 var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemon now
 
 logPokemon('sushi', 'algorithms'); // Pika Chu  loves sushi and algorithms
+
+
+
+
+
+
+
+//### In JavaScript we have two types of Types That are:-
+// ## Value Types(Primitive)  or Reference Types;
+
+//#Value Types:-Number, String, Boolean, Symbol, Null, Undefined;
+//#Reference Types:-Objects, Funtions, Arrays (functions and arrays are objects)
+
+//Notes:- Primitives are copied by their value
+
+let x=10;
+let y=x;
+x=20;
+console.log(x);//20
+console.log(y);//10
+
+// Objects are copied by their reference
+let a={value:10};
+let b=a;
+a.value=20;
+
+console.log(a);//{value:20}  it created a copy of this in a memory and adress of this located in variable 'a'
+console.log(b);//{value:20}  it  also created a copy of this in a memory and adress of this located in variable 'b'
+//But both 'a' and 'b' pointing same object in memory
+
