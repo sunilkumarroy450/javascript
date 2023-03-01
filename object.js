@@ -93,6 +93,8 @@ function Circle1(radius) {
 //below all are same
 Circle1.call({}, 7); //both are same
 const ans = new Circle1(7); //both are same(here 'this' creates empty obj)
+const res=Object.keys(ans)//this property is to extract all the keys in the Objects
+console.log(res)//[ 'radius', 'draw' ]
 Circle1.apply({}, [1, 2, 3]); //this is simlar to both but it only takes arguments as an array
 
 //# Example for Bind
