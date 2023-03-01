@@ -97,6 +97,16 @@ const res=Object.keys(ans)//this property is to extract all the keys in the Obje
 console.log(res)//[ 'radius', 'draw' ]
 Circle1.apply({}, [1, 2, 3]); //this is simlar to both but it only takes arguments as an array
 
+//##Some in built property of circle;
+// #in (property);
+ if('radius' in ans){
+    console.log(`There is raidus in circle`)
+ }
+ else{
+    console.log('There is no raidus key/property in the circle ')
+ }
+
+
 //# Example for Bind
 var pokemon = {
   firstname: "Pika",
