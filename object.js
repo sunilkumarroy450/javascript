@@ -184,3 +184,15 @@ console.log(a);//{value:20}  it created a copy of this in a memory and adress of
 console.log(b);//{value:20}  it  also created a copy of this in a memory and adress of this located in variable 'b'
 //But both 'a' and 'b' pointing same object in memory
 
+
+
+
+
+
+
+
+
+
+
+//###Abstraction
+//# Hide the details, Show the essentials
