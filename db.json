@@ -1,6 +1,5 @@
 {
     "todo":[
-        {"id":1,"name":"Sunil"},
-        {"id":2,"name":"Suraj"}
+        {"id":1,"name":"Sunil"}
     ]
 }
