@@ -192,7 +192,5 @@ console.log(b);//{value:20}  it  also created a copy of this in a memory and adr
 
 
 
-
-
 //###Abstraction
 //# Hide the details, Show the essentials
