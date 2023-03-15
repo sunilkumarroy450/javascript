@@ -71,8 +71,8 @@ console.log(ans1); //{ name: 'Sudhir' }
 
 console.log(obj1); //{ name: 'Shyam' }
 
-// Deep Copy [It is for Nested object]
-
+// Deep Copy [It is for Nested object And Array]
+// [Note]: if there will be function/methods inside nested object, It will not stringfigy/parse the function, other property will be manipulated
 let userObj = {
   name: "Sunil",
   age: 98,
