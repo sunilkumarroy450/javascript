@@ -35,12 +35,12 @@ console.log(prevUser2); // { name: "Rahul Kumar", age: 24 }
 
 // Deep Copy and Shallow Copy in javaScript
 // [Value of objects can be changed by two mwthods : (refrence and By Value)]
-let obj={
-    name:"gaurav"
-}
+let obj = {
+  name: "gaurav",
+};
 
-let user=obj // {Here we assign obj Object to user Object 
-//where obj refrence is copied in user Object , and 
+let user = obj; // {Here we assign obj Object to user Object
+//where obj refrence is copied in user Object , and
 //now both have same location and if we change value in any of these both Object's value will be changed}
 // {Note}: this copy is done by (Refrence)
 
@@ -53,3 +53,27 @@ let user=obj // {Here we assign obj Object to user Object
  console.log(x) // anil
  console.log(name) // sunil]
  */
+
+
+
+
+
+
+// Shallow Copy
+let obj1 = {
+  name: "Shyam",
+};
+
+const ans = { ...obj1 };
+ans.name = "Sharma";
+console.log(ans); //{ name: 'Sharma' }
+
+console.log(obj1); //{ name: 'Shyam' }
+
+//          OR
+
+const ans1 = Object.assign({}, obj1);
+ans1.name = "Sudhir";
+console.log(ans1); //{ name: 'Sudhir' }
+
+console.log(obj1);//{ name: 'Shyam' }
