@@ -31,8 +31,6 @@ user2.age = 65;
 console.log(user2); // { name: "Rahul Kumar", age: 65 }
 console.log(prevUser2); // { name: "Rahul Kumar", age: 24 }
 
-
-
 // Deep Copy and Shallow Copy in javaScript
 // [Value of objects can be changed by two mwthods : (refrence and By Value)]
 let obj = {
@@ -54,12 +52,7 @@ let user = obj; // {Here we assign obj Object to user Object
  console.log(name) // sunil]
  */
 
-
-
-
-
-
-// Shallow Copy
+// Shallow Copy [It is for one level of object]
 let obj1 = {
   name: "Shyam",
 };
@@ -76,4 +69,24 @@ const ans1 = Object.assign({}, obj1);
 ans1.name = "Sudhir";
 console.log(ans1); //{ name: 'Sudhir' }
 
-console.log(obj1);//{ name: 'Shyam' }
+console.log(obj1); //{ name: 'Shyam' }
+
+// Deep Copy [It is for Nested object]
+
+let userObj = {
+  name: "Sunil",
+  age: 98,
+  address: {
+    city: "Patna",
+    pin: 456756,
+    state: "Bihar",
+  },
+};
+
+const res = JSON.stringify(userObj);
+const res1 = JSON.parse(res);
+
+res1.address.pin = 800006;
+console.log(res1); //{name: 'Sunil',age: 98,address: { city: 'Patna', pin: 800006, state: 'Bihar' }}
+
+console.log(userObj); //{name: 'Sunil',age: 98,address: { city: 'Patna', pin: 456756, state: 'Bihar' }}
