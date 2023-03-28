@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon interview1.js"
+    "start": "nodemon random.js"
   },
   "repository": {
     "type": "git",

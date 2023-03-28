@@ -1,6 +1,6 @@
 const buildArray = function (nums) {
   const n = nums.length;
-  const ans = new Array(n);
+  const ans = [];
   for (let i = 0; i < n; i++) {
     ans[i] = nums[nums[i]];
   }
@@ -18,7 +18,7 @@ var getConcatenation1 = function (nums) {
 };
 
 const res1 = getConcatenation1([1, 2, 1]);
-console.log(res1);
+// console.log(res1);
 
 // OR
 
@@ -33,4 +33,4 @@ var getConcatenation = function (nums) {
 };
 
 const res = getConcatenation([1, 2, 1]);
-console.log(res);
+// console.log(res);
