@@ -62,4 +62,24 @@ Output:
 start
 end
 timer expired
+
+
+
+
+
+##What is the Difference between Webpage and Website?
+
+The webpage is a single document on the web using a unique URL,
+ while a website is a collection of multiple webpages in which 
+ information on a related topic or another subject is linked together
+  under the same domain address.
+
+
+
+  ###What is difference between Website and Web application?
+
+  The main difference between Website and Web application is that a 
+  Web application is a piece of software which is accessed by the browser 
+  and the browser is an application which is used for browsing the internet,
+   whereas a Website is a collection of related web pages.
 */
