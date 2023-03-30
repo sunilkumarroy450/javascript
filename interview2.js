@@ -82,4 +82,39 @@ The webpage is a single document on the web using a unique URL,
   Web application is a piece of software which is accessed by the browser 
   and the browser is an application which is used for browsing the internet,
    whereas a Website is a collection of related web pages.
+
+
+
+   ###What is closure?
+
+   Closures are functions that refer to independent (free) variables.
+    In other words, the function defined in the closure ‘remembers’ 
+    the environment in which it was created.
+
+
+
+function numberGenerator() {
+  // Local “free” variable that ends up within the closure
+  var num = 1;
+  function checkNumber() { 
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
+}
+
+var number = numberGenerator();
+number(); // 2
+
+Eg of Functions in closure
+
+function sayHello() {
+  var say = function() { console.log(hello); }
+  // Local variable that ends up within the closure 
+  var hello = 'Hello, world!';
+  return say;
+}
+var sayHelloClosure = sayHello(); 
+sayHelloClosure(); // ‘Hello, world!’
+
 */
