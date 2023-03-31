@@ -43,7 +43,7 @@ let user = obj; // {Here we assign obj Object to user Object
 // {Note}: this copy is done by (Refrence)
 
 //Note: [Yedi jab hm variable ko copy krte hai to uski value copy hoti hai
-// aur jab hm obj ko copy karte hhai to uski location copy hoti hai]
+// aur jab hm obj ko copy karte hai to uski location copy hoti hai]
 //eg:
 /* [let name='sunil';
  let x=name;
